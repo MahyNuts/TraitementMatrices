@@ -55,32 +55,48 @@ namespace TraitementsMatrices
 
             sousProgrammes.RemplissageMatrice(L1, C1, L2, C2, out M1, out M2);
             sousProgrammes.ConcatenationMatrice(M1, M2, L1, C1, L2, C2, out stringTab1, out stringTab2);
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Première matrice :");
+            Console.ResetColor();
             Console.WriteLine(stringTab1);
             Console.WriteLine("");
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Deuxième matrice :");
+            Console.ResetColor();
             Console.WriteLine(stringTab2);
             sousProgrammes.AdditionMatrices(L1, C1, L2, C2, M1, M2,out MR, out R );
             sousProgrammes.MultiplicationMatrices(M1, M2, out verifBool, out result);
             sousProgrammes.ConcatenationResultat(L1, C1, L2, C2, MR, result, out stringMR, out stringResult);
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Addition :");
+            Console.ResetColor();
             if (R == true)
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine(stringMR);
+                Console.ResetColor();
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Addition impossible.");
+                Console.ResetColor();
             }
             Console.WriteLine("");
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Multiplication :");
+            Console.ResetColor();
             if (verifBool == true)
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine(stringResult);
+                Console.ResetColor();
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Multiplication impossible.");
+                Console.ResetColor();
             }
         }
     }
