@@ -72,20 +72,20 @@ namespace TraitementsMatrices
             }
         }
 
-        public void MultiplicationMatrices(int[,] M1, int[,] M2,out bool verifBool, out int[,] result)
+        public void MultiplicationMatrices(int[,] M1, int[,] M2,out bool verifBool, out int[,] MR)
         {
             verifBool  = true;
-            result = new int[M1.GetLength(0), M2.GetLength(1)];
+            MR = new int[M1.GetLength(0), M2.GetLength(1)];
             if(M1.GetLength(1) == M2.GetLength(0))
             {
                 for(int i = 0; i < M1.GetLength(0); i++)
                 {
                     for(int j = 0; j < M2.GetLength(1); j++)
                     {
-                        result[i, j] = 0;
+                        MR[i, j] = 0;
                         for(int k = 0; k < M1.GetLength(1); k++)
                         {
-                            result[i, j] = result[i, j] + M1[i, k] * M2[k, j];
+                            MR[i, j] = MR[i, j] + M1[i, k] * M2[k, j];
                         }
                     }
                 }
@@ -96,10 +96,9 @@ namespace TraitementsMatrices
             }
         }
 
-        public void ConcatenationResultat(int L1, int C1, int L2, int C2, int[,] MR, int[,] result, out string stringMR, out string stringResult)
+        public void ConcatenationResultat(int L1, int C1, int L2, int C2, int[,] MR, out string stringMR)
         {
             stringMR = "";
-            stringResult = "";
             for (int i = 0; i < MR.GetLength(0); i++)
             {
                 for (int j = 0; j < MR.GetLength(1); j++)
@@ -107,14 +106,6 @@ namespace TraitementsMatrices
                     stringMR += MR[i, j] + "|";
                 }
                 stringMR += "\n";
-            }
-            for (int i = 0; i < result.GetLength(0); i++)
-            {
-                for (int j = 0; j < MR.GetLength(1); j++)
-                {
-                    stringResult += result[i, j] + "|";
-                }
-                stringResult += "\n";
             }
         }
     }
