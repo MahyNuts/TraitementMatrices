@@ -54,18 +54,18 @@ namespace TraitementsMatrices
                 Console.WriteLine("-----------------------------------------");
                 Console.WriteLine("");
 
-                sousProgrammes.RemplissageMatrice(L1, C1, L2, C2, out M1, out M2);
-                sousProgrammes.ConcatenationMatrice(M1, M2, L1, C1, L2, C2, out stringTab1, out stringTab2);
+                sousProgrammes.RemplissageMatrice(L1, C1, L2, C2, out M1, out M2); //Remplissage des matrices par des nombres aléatoires 
+                sousProgrammes.ConcatenationMatrice(M1, M2, L1, C1, L2, C2, out stringTab1, out stringTab2); //Convertie les matrices en string
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("Première matrice :");
                 Console.ResetColor();
-                Console.WriteLine(stringTab1);
+                Console.WriteLine(stringTab1);//Affiche la première matrice
                 Console.WriteLine("");
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("Deuxième matrice :");
                 Console.ResetColor();
-                Console.WriteLine(stringTab2, "\n \n");
-                do
+                Console.WriteLine(stringTab2, "\n \n");//Affiche la deuxième matrice
+                do //Choix entre l'addition ou la multiplication
                 {
                     do
                     {
@@ -80,18 +80,18 @@ namespace TraitementsMatrices
                 Console.WriteLine("\n \n \n \n");
                 if (choixOp == 1)
                 {
-                    sousProgrammes.AdditionMatrices(L1, C1, L2, C2, M1, M2, out MR, out R);
-                    sousProgrammes.ConcatenationResultat(L1, C1, L2, C2, MR, out stringMR);
+                    sousProgrammes.AdditionMatrices(L1, C1, L2, C2, M1, M2, out MR, out R); //Addition des deux tableaux
+                    sousProgrammes.ConcatenationResultat(L1, C1, L2, C2, MR, out stringMR); //Convertie les matrices en string
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine("Addition :");
                     Console.ResetColor();
-                    if (R == true)
+                    if (R == true) //Si addition possible
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine(stringMR);
                         Console.ResetColor();
                     }
-                    else
+                    else //Si addition impossible
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Addition impossible.");
@@ -100,18 +100,18 @@ namespace TraitementsMatrices
                 }
                 else
                 {
-                    sousProgrammes.MultiplicationMatrices(M1, M2, out verifBool, out MR);
-                    sousProgrammes.ConcatenationResultat(L1, C1, L2, C2, MR, out stringMR);
+                    sousProgrammes.MultiplicationMatrices(M1, M2, out verifBool, out MR); //Multiplie les deux matrices
+                    sousProgrammes.ConcatenationResultat(L1, C1, L2, C2, MR, out stringMR); //Convertie les matrices en string
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine("Multiplication :");
                     Console.ResetColor();
-                    if (verifBool == true)
+                    if (verifBool == true) //Si multiplication possible
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine(stringMR);
                         Console.ResetColor();
                     }
-                    else
+                    else //Si multiplication impossible
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Multiplication impossible.");
@@ -119,7 +119,7 @@ namespace TraitementsMatrices
                     }
                 }
                 Console.WriteLine("\n \n");
-                do
+                do //Permet de choisir si on relance ou non le programme
                 {
                     do
                     {
